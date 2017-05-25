@@ -22,12 +22,20 @@ function linkedListGenerator(){
       next : null
     };
     if (getHead() === null) {
-      return newNode;
+      head = newNode;
+      tail = newNode;
+    } else if (getHead().next === null) {
+      tail = newNode;
+      getHead().next = tail;
+    } else {
+      getTail().next = newNode;
+      tail = newNode;
     }
+    return newNode;
 
   }
 
-  function get() {
+  function get(num) {
 
   }
 
