@@ -36,7 +36,18 @@ function linkedListGenerator(){
   }
 
   function get(num) {
+    var checkNode = head;
+    var count = 0;
 
+    for (var i = 0; i < num; i++) {
+      if (checkNode.next !== null) {
+        checkNode = checkNode.next;
+        count++;
+      } else {
+        return false;
+      }
+    }
+    return checkNode;
   }
 
   function remove() {
